@@ -8,6 +8,7 @@ public class Test {
 		System.out.println("test");
 
 		System.out.println("만약에 fetch를 하고싶다면?");
+		System.out.println("윤웅찬");
 
 	}//main
 }
