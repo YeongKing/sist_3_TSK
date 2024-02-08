@@ -1,9 +1,0 @@
-package day0207;
-
-public class UseDataStream {
-
-	public static void main(String[] args) {
-
-	}//main
-
-}//class

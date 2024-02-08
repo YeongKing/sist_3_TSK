@@ -1,9 +1,0 @@
-package day0206;
-
-public class UseBuffered {
-
-	public UseBuffered() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
