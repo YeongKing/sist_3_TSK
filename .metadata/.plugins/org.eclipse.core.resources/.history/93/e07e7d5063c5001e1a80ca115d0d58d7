@@ -1,0 +1,18 @@
+package TeamHomeWork;
+
+public class workEvent {
+	private String userId; //로그인성공한 당시 접속된 userId
+	
+	public workEvent(String userId) {
+		
+		this.userId=userId;
+		System.out.println("로그인된 계정의 아이디 : " + this.userId);
+		
+		
+		
+	}
+
+	
+	
+	
+}

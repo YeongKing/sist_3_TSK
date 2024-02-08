@@ -1,0 +1,11 @@
+package day0207_HomeWor;
+
+public class RunJavaMemo {
+
+	public static void main(String[] args) {
+
+		new JavaMemoDesign();
+
+	}
+
+}

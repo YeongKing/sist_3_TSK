@@ -1,0 +1,8 @@
+package day0202;
+
+//public class TabaccoException extends RuntimeException{//RuntimeException으로 만들 때
+public class TabaccoException extends RuntimeException{
+	
+	
+
+}

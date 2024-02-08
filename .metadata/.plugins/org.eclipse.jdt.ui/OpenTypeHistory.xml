@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=java_se/src&lt;day0116{Parent.java[Parent" modifiers="1" timestamp="1705416320306"/>
+    <typeInfo handle="=java_se/src&lt;day0116{Person.java[Person" modifiers="1" timestamp="1705468946190"/>
+    <typeInfo handle="=java_se/src&lt;day0117{OverrideSuper.java[OverrideSuper" modifiers="1" timestamp="1705476443516"/>
+    <typeInfo handle="=java_se/src&lt;day0117{TestSuper.java[TestSuper" modifiers="268435457" timestamp="1705470359459"/>
+    <typeInfo handle="=java_se/src&lt;day0117{Test1.java[Test1" modifiers="67108865" timestamp="1705470456906"/>
+    <typeInfo handle="=java_se/src&lt;day0117{Dog.java[Dog" modifiers="1025" timestamp="1705479647300"/>
+    <typeInfo handle="=java_se/src&lt;day0118{Fly.java[Fly" modifiers="513" timestamp="1705544380740"/>
+    <typeInfo handle="=java_se/C:\/dev\/eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\/jre\/lib\/jrt-fs.jar`java.base=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/17\/docs\/api\/=/=/module=/true=/&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1682402758000"/>
+    <typeInfo handle="=java_se/C:\/dev\/eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\/jre\/lib\/jrt-fs.jar`java.desktop=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/17\/docs\/api\/=/=/module=/true=/&lt;javax.swing(JFrame.class[JFrame" modifiers="33" timestamp="1682402758000"/>
+</typeInfoHistroy>

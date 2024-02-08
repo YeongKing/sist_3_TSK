@@ -1,0 +1,26 @@
+package day0205;
+
+import java.io.IOException;
+
+/**
+ *  키보드의 입력 값 받기.<br>
+ */
+public class UseKeyboardInput {
+
+	public static void main(String[] args) {
+
+		
+		System.out.println("아무키나 누르고 엔터");
+		try {
+			int readData = System.in.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+
+	}//main
+
+}//class

@@ -1,0 +1,62 @@
+package TeamHomeWork;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+@SuppressWarnings("serial")
+public class loginDesign extends JFrame{
+	
+	private JTextField jtfId,jtfPw;
+	
+	private JLabel jlId,jlPw;
+	
+	private JButton jbLogin;
+	
+	
+	public loginDesign(){
+		super("로그인");
+		
+		jtfId = new JTextField();
+		jtfPw = new JTextField();
+		
+		jlId = new JLabel("ID");
+		jlPw = new JLabel("PW");
+		
+		jbLogin = new JButton("로그인");
+		
+		setLayout(null);//수동배치
+		
+		setBounds(500,500,400,400);
+		
+		
+		
+		jtfId.setBounds(100,50,100,30);
+		jtfPw.setBounds(100,80,100,30);
+		add(jtfId);
+		add(jtfPw);
+		
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+	}
+	
+	
+	
+
+}

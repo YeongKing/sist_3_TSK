@@ -1,0 +1,34 @@
+package TeamHomeWork;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class WorkDesign extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6415801009689186058L;
+
+	private String userId; //로그인성공한 당시 접속된 userId
+	
+	private JTextArea jta;
+	private JScrollPane jsp;
+	
+	
+	
+	public WorkDesign(String userId) {
+		
+		this.userId=userId;
+		System.out.println("로그인된 계정의 아이디 : " + this.userId);
+		
+
+		
+		
+		
+		
+		
+	}
+
+}

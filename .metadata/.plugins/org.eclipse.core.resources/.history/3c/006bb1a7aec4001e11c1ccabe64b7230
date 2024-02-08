@@ -1,0 +1,17 @@
+package day0206;
+
+public class TestStream {
+
+	public TestStream() {
+		
+		
+		
+		
+		
+	}//TestStream
+
+	public static void main(String[] args) {
+
+	}//main
+
+}//class

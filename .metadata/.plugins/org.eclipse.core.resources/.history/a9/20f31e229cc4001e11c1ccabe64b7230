@@ -1,0 +1,14 @@
+package day0206;
+
+public class UseFileOutputStream {
+
+	public UseFileOutputStream() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package day0202;
+
+public class TestThrows {
+
+	
+	
+	/**
+	 * method에서 throws로 예외를 던지면, 호출한 곳에서 예외를 잡아 처리를 하게 된다.
+	 */
+	public void loadClass() {
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}//main
+
+}//class

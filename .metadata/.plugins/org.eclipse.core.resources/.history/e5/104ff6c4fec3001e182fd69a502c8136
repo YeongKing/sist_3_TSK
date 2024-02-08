@@ -1,0 +1,18 @@
+package day0205_HomeWork;
+
+/**
+ * 
+ * 숙제<br>
+ * 1.InputDialog를 사용하여 경로를 받습니다.(c:/dev)<br>
+ * 2.입력된 문자열에 해당하는 경로가 존재하면 
+ * 
+ * 
+ * 
+ */
+public class HomeWork0205 {
+
+	public static void main(String[] args) {
+
+	}//main
+
+}//class

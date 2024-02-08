@@ -1,0 +1,67 @@
+package day0205;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import javax.swing.JOptionPane;
+
+/**
+ * 
+ */
+public class UseFileInputStream {
+	
+	public UseFileInputStream() {
+		//1.File 생성
+		
+		File file = new File("c:/dev/temp/java_read.txt");
+
+		
+		if(!file.exists()) {
+			JOptionPane.showMessageDialog(null, "파일명이나 경로를 확인해주세요.");
+			return;
+			
+			
+			
+			
+		}//end if 
+		
+		
+		//2.File을 읽기 위한 stream을 연결
+		FileInputStream fis = null;
+		
+		
+		try {
+			fis = new FileInputStream(file);
+		} finally {
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		//3.반복문을 돌려서 값을 얻는다...
+		
+		while() {
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}//UseFileInputStream
+
+	public static void main(String[] args) {
+		new UseFileInputStream();
+	}//main
+
+}//class

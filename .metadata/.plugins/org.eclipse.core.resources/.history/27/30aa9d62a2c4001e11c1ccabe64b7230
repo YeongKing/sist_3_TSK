@@ -1,0 +1,18 @@
+package day0206;
+
+/**
+ * 16bit stream을 사용한 문자열 출력
+ * 
+ */
+public class UseFileWriter {
+
+	public UseFileWriter() {
+		
+		
+	}//UseFileWriter
+
+	public static void main(String[] args) {
+		new UseFileWriter();
+	}//main
+
+}//class

@@ -1,0 +1,34 @@
+package day0206;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+
+/**
+ * BufferedReader를 사용한 줄단위 읽기
+ */
+public class UseBufferedReader {
+
+	public UseBufferedReader() throws FileNotFoundException {
+		//1.File 생성
+		File readFile = new File("C:/dev/temp/java_read.txt");
+		//2.스트림 생성
+		FileInputStream fis = new FileInputStream(readFile);//파일과 연결
+
+		InputStreamReader isr = new InputStreamReader(fis); // 8bit stream + 16bit stream연결
+		BufferedReader br = new BufferedReader(isr);
+		
+		
+	}//UseBufferedReader
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new UseBufferedReader();
+	}//main
+
+}//class

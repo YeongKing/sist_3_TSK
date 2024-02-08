@@ -1,0 +1,18 @@
+package day0205_HomeWork;
+
+/**
+ * 
+ * 숙제<br>
+ * 1.InputDialog를 사용하여 경로를 받습니다.(c:/dev)<br>
+ * 2.입력된 문자열에 해당하는 경로가 존재하면 아래와 같이 디렉토리내 모든 디렉토리와 파일명을 J.T.A에 출력하는 프로그램을 작성
+ * 
+ * 
+ * 
+ */
+public class HomeWork0205 {
+
+	public static void main(String[] args) {
+
+	}//main
+
+}//class

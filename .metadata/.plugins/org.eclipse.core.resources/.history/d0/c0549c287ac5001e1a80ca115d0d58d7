@@ -1,0 +1,35 @@
+package day0207;
+
+import java.io.Serializable;
+
+
+public class UserData  implements Serializable {
+
+	private String name ;
+	private double height,weight ;
+	
+
+	public UserData(String name, double height, double weight) {
+		super();
+		this.name = name;
+		this.height = height;
+		this.weight = weight;
+	}
+
+	public String getName() {
+		return name;
+	}//getName
+
+	public double getHeight() {
+		return height;
+	}//getHeight
+
+	public double getWeight() {
+		return weight;
+	}//getWeights
+	
+	
+	
+	
+	
+}// class

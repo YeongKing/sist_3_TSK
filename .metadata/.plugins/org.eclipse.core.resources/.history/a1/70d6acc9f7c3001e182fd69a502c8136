@@ -1,0 +1,24 @@
+package day0205_HomeWork;
+
+import javax.swing.JOptionPane;
+
+/**
+*  JOptionPane.showInputDialog를 사용하여<br>
+*  1.삭제할 파일의 경로와 파일명을 받는다.<br>
+*  2.해당 파일이 존재한다면 ConfirmDialog를 사용하여 "정말 삭제하시겠습니까?"를 물어본 후 <br>
+*  "예"가 눌리면 삭제하는 프로그램을 작성.<br>
+*
+*
+ */
+public class HomeWork0205 {
+
+	public static void main(String[] args) {
+
+		//   c:/dev/temp/java_read2.txt
+		String filePath = JOptionPane.showInputDialog("삭제할 파일의 경로와 파일명을 입력해주세요.");
+		System.out.println(filePath);
+		
+		
+	}//main
+
+}//class
