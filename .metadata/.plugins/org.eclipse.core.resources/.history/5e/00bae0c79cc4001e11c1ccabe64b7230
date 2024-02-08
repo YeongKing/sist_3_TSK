@@ -1,0 +1,35 @@
+package day0206;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+/**
+ * 8bit stream
+ * 
+ */
+public class UseFileOutputStream {
+
+	public UseFileOutputStream() throws FileNotFoundException {
+		
+		//1.파일생성
+		File file = new File("C:/dev/temp/java_write.txt");
+		
+		
+		//2.스트림 생성 : 스트림이 생성되면 
+		
+		FileOutputStream fos = new FileOutputStream(file);
+		
+		
+	}// UseFileOutputStream
+
+	public static void main(String[] args) {
+		try {
+			new UseFileOutputStream();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}// main
+
+}// class

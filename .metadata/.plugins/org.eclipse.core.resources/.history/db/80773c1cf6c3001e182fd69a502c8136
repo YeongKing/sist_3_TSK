@@ -1,0 +1,21 @@
+package day0205;
+
+import java.io.File;
+
+/**
+ * 파일 삭제
+ * 
+ * 
+ */
+public class UseFile3 {
+
+	public static void main(String[] args) {
+		//1. 삭제할 파일명을 가진 File객체를 생성
+		File file = new File("c:/dev/temp/java_read2.txt");
+		//2. 삭제
+		System.out.println(file.delete());
+		
+		
+	}//main
+
+}//class

@@ -1,0 +1,22 @@
+package day0206;
+
+/**
+ * BufferedReader를 사용한 줄단위 읽기
+ */
+public class UseBufferedReader {
+
+	public UseBufferedReader() {
+		
+		
+		
+	}//UseBufferedReader
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new UseBufferedReader();
+	}//main
+
+}//class

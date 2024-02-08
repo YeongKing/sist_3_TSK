@@ -1,0 +1,9 @@
+package day0206;
+
+public class UseBufferedWriter {
+
+	public UseBufferedWriter() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

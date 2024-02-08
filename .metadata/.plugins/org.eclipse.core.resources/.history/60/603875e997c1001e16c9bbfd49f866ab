@@ -1,0 +1,59 @@
+package day0202;
+
+import java.util.Random;
+
+//public class TabaccoException extends RuntimeException{//RuntimeException으로 만들 때
+@SuppressWarnings("serial")
+public class TabaccoException extends Exception{//CompileException으로 만들 때
+	
+	public TabaccoException() {
+		
+		super("담배는 질병의 원인이 되며.. 청소년판매금지");
+		
+		
+		
+	}//TabaccoException
+	
+
+	public String walk2() throws TabaccoException{// 일 => 구현해야할 업무
+		String msg = "";
+		int flag = new Random().nextInt(4);// 0:초 , 1:중, 2:고, 3:대
+
+		String[] title = { "초딩", "중딩", "고딩", "대딩" };
+
+		if (flag == 0) {// 초딩이 흡연중이면 예외를 발생 시킨다.!}
+
+
+				throw new Exception(title[flag] + "님 지나친 흡연은 폐에 좋지 않습니다. 금연부탁요");
+
+		} // end if
+		
+//예외가 발생하지 않았을 때만 반환 메시지를 생성한다.
+		msg = title[flag] + "님 흡연 중 모른척 지나간다. ('' )( '')";
+		return msg;
+	}
+	
+	
+		
+
+		
+		
+		
+
+		
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

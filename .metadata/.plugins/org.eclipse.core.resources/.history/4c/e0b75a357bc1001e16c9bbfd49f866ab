@@ -1,0 +1,18 @@
+package day0202;
+
+public class UseCompileException {
+
+	
+	public UseCompileException() {
+		
+		
+		
+	}//UseCompileException
+	
+	
+	
+	public static void main(String[] args) {
+		new UseCompileException();
+	}//main
+
+}//class

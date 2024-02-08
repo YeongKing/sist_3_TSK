@@ -1,0 +1,27 @@
+package day0206;
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+public class UseFileReader {
+
+	public UseFileReader() {
+
+	}// UseFileReader
+
+	public static void main(String[] args) {
+
+		
+		
+		try {
+			
+			new UseFileReader();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}// main
+
+}// class

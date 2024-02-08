@@ -1,0 +1,25 @@
+package day0206;
+
+import java.io.File;
+
+/**
+ * BufferedReader를 사용한 줄단위 읽기
+ */
+public class UseBufferedReader {
+
+	public UseBufferedReader() {
+		//1.File 생성
+		File readFile = new File("C:/dev/temp/java_read.txt");
+		
+		
+	}//UseBufferedReader
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new UseBufferedReader();
+	}//main
+
+}//class

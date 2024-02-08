@@ -1,0 +1,15 @@
+package day0206;
+
+/**
+ * 
+ */
+public class UseFileOutputStream {
+
+	public UseFileOutputStream() {
+	}// UseFileOutputStream
+
+	public static void main(String[] args) {
+		new UseFileOutputStream();
+	}// main
+
+}// class

@@ -1,0 +1,18 @@
+package day0206;
+
+/**
+ * BufferedWriter를 사용한 출력
+ */
+public class UseBufferedWriter {
+
+	public UseBufferedWriter() {
+	}//UseBufferedWriter
+	
+	
+	public static void main(String[] agrs) {
+		
+		
+		
+	}//main
+
+}//class

@@ -1,0 +1,26 @@
+package day0207;
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+public class FileCopy {
+	
+	
+	public FileCopy() {
+		//원본파일명 얻기
+		
+		
+		
+		
+	}//FileCopy
+	
+	
+
+	public static void main(String[] args) {
+
+	}//main
+
+}//class

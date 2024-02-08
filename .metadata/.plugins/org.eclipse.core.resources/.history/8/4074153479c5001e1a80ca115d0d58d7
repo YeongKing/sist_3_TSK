@@ -1,0 +1,26 @@
+package day0207;
+
+public class UseObjectStream {
+
+	public void writeObject(UserData ud) {
+		//1.스트림 생성
+		//2.입력받은 객체 쓰기
+		//3.분출
+		//4.끊기
+	}//writeObject
+	
+	public UserData readObject() {
+		UserData ud = null;
+		
+		return ud;
+	}//readObject
+	
+	
+	
+	public static void main(String[] args) {
+
+		UseObjectStream uos = new UseObjectStream();
+		
+	}//main
+
+}//class

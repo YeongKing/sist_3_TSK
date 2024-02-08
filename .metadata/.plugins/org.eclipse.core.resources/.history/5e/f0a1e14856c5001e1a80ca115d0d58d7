@@ -1,0 +1,76 @@
+package day0207;
+
+import java.awt.FileDialog;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+@SuppressWarnings("serial")
+public class FileCopy extends JFrame implements ActionListener{
+	
+	private JLabel jlOutPut;
+	
+	public FileCopy() {
+		super("파일 복사");
+		
+		JButton jbtnCopy = new JButton("복사할 파일 선택");
+		jlOutPut = new JLabel("복사할 파일을 선택해주세요.");
+		JPanel jpCenter = new JPanel();
+		jpCenter.add(jbtnCopy);
+		
+		jlOutPut.setBorder(new TitledBorder("출력"));
+		
+		add("Center",jpCenter);
+		add("South",jlOutPut);
+		
+		jbtnCopy.addActionListener(this);
+		
+		setBounds(100,100,300,400);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+	}//FileCopy
+	
+	
+	
+	public void fileCopy() {
+		//원본파일명 얻기
+		FileDialog fdOpen = new FileDialog(this,"복사할 파일 선택",FileDialog.LOAD);
+		fdOpen.setVisible(true);
+		
+		File fileOrigin=new File(fdOpen.getDirectory()+fdOpen.getFile());
+		System.out.println(fileOrigin);
+				
+		
+		
+		
+		
+	}
+	
+	
+
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		fileCopy();
+	}//actionPerformed
+
+	public static void main(String[] args) {
+		new FileCopy();
+	}//main
+}//class

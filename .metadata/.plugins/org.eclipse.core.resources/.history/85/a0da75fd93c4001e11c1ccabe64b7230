@@ -1,0 +1,47 @@
+package day0206;
+
+import java.io.File;
+
+/**
+ * 
+ * 16bit stream을 사용한 텍스트 파일의 내용 읽기.
+ * 
+ * 
+ */
+public class UseFileReader {
+
+	public UseFileReader() {
+		
+
+		//1.File 생성
+		File readFile = new File("C:/dev/temp/java_read.txt");
+		if(!readFile.exists()) {
+			
+			System.out.println(readFile.getAbsolutePath()+"는 존재하지 않습니다.");
+			return;
+		}//end if
+		
+		//2. stream 생성
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}// UseFileReader
+
+	public static void main(String[] args) {
+
+		
+		try {
+			
+			new UseFileReader();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}// main
+
+}// class

@@ -1,0 +1,27 @@
+package TeamHomeWork;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
+public class WorkDesign extends JFrame{
+	private String userId; //로그인성공한 당시 접속된 userId
+	
+	private JTextArea jta;
+	private JOptionP
+	
+	
+	public WorkDesign(String userId) {
+		
+		this.userId=userId;
+		System.out.println("로그인된 계정의 아이디 : " + this.userId);
+		
+
+		
+		
+		
+		
+		
+	}
+
+}

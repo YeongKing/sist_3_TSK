@@ -1,0 +1,13 @@
+package TeamHomeWork;
+
+public class runTeamHomeWork {
+
+	public static void main(String[] args) {
+
+		new loginDesign();
+		
+		
+	}//main
+
+	
+}//class

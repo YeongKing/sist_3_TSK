@@ -1,0 +1,45 @@
+package day0207;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.NotSerializableException;
+import java.io.ObjectOutputStream;
+
+public class UseObjectStream {
+
+	public void writeObject(UserData ud) throws NotSerializableException, IOException {
+		//1.스트림 생성
+		
+		ObjectOutputStream oos = null;
+		
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream("C:/dev/temp/obj.txt"));
+			//2.입력받은 객체 쓰기
+			
+			oos.writeObject(ud);//직렬화가 되지 않은 객체라면 NotSerializableException이 throws된다.
+			//3.분출
+			oos.flush();
+		} finally {
+			//4.끊기
+			if(oos!=null) {oos.close();}
+		}
+	}//writeObject
+	
+	public UserData readObject() {
+		UserData ud = null;
+		
+		return ud;
+	}//readObject
+	
+	
+	
+	public static void main(String[] args) {
+
+		UseObjectStream uos = new UseObjectStream();
+		UserData ud = new UserData("윤웅찬",182.5,67.8);
+		uos.writeObject(ud);
+		
+	}//main
+
+}//class

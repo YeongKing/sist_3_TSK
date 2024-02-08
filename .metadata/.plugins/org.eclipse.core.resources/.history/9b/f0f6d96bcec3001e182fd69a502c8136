@@ -1,0 +1,17 @@
+package day0205;
+
+/**
+ *  키보드의 입력 값 받기.
+ */
+public class UseKeyboardInput {
+
+	public static void main(String[] args) {
+
+		
+		
+		
+		
+
+	}//main
+
+}//class

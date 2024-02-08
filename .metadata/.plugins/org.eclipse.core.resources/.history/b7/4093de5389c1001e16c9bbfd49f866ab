@@ -1,0 +1,27 @@
+package day0202;
+
+public class TestThrows {
+
+	
+	
+	/**
+	 * method에서 throws로 예외를 던지면, 호출한 곳에서 예외를 잡아 처리를 하게 된다.
+	 * 예외 발생 예상 코드를 가진 method안에서는 try~catch로 처리할 필요가 없다.
+	 */
+	public void loadClass() {
+		
+		String className = "java.lang.String";
+		Class cls = Class.forName("");
+		
+		
+		
+	}//loadClass
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}//main
+
+}//class
