@@ -1,9 +1,0 @@
-package day0202;
-
-public class UseRuntimeException {
-
-	public static void main(String[] args) {
-
-	}//main
-
-}//class

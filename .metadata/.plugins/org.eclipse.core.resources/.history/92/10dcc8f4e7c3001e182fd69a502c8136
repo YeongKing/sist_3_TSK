@@ -1,9 +1,0 @@
-package day0205;
-
-public class UseFile {
-
-	public static void main(String[] args) {
-
-	}//main
-
-}//class
