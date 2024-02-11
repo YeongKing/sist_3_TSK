@@ -18,12 +18,6 @@ public class WorkDesign extends JFrame {
 	private JTextArea jta;
 	private JScrollPane jsp;
 	private JButton jbtnView, jbtnSelect;	// report 버튼 삭제
-	private JLabel jlStart, jlEnd, jlLine, jlLineNumber;
-	private JTextField jtfStart, jtfEnd;
-	
-
-	private JTextArea jta;
-	private JScrollPane jsp;
 
 	private JButton jbView, jbSelect, jbReport;
 
@@ -31,12 +25,9 @@ public class WorkDesign extends JFrame {
 		super("sist 사용자 로그 분석 프로그램");
 
 		// this.userId = userId;
-		jlStart = new JLabel("시작 라인 범위 : ");
-		jlEnd = new JLabel("마지막 라인 범위 : ");
+		jlStart = new JLabel("시작 라인 : ");
+		jlEnd = new JLabel("마지막 라인 : ");
 		jlAll = new JLabel("총 라인 수: ");
-
-		jlLine = new JLabel("라인 수  : ");
-		jlLineNumber = new JLabel();
 		
 		jtfStart = new JTextField();
 		jtfEnd = new JTextField();
@@ -60,8 +51,6 @@ public class WorkDesign extends JFrame {
 		jlStart.setBounds(50, 30, 110, 30);
 		jlEnd.setBounds(280, 30, 110, 30);
 		jlAll.setBounds(550, 30, 100, 30);
-		jlLine.setBounds(530, 30, 110, 30);
-		jlLineNumber.setBounds(600, 30, 110, 30);
 		
 
 		jtfStart.setBounds(145, 30, 120, 30);
@@ -81,8 +70,6 @@ public class WorkDesign extends JFrame {
 
 		add(jlStart);
 		add(jlEnd);
-		add(jlLine);
-		add(jlLineNumber);
 
 		add(jtfStart);
 		add(jtfEnd);
@@ -101,6 +88,10 @@ public class WorkDesign extends JFrame {
 		// 제거 후 WorkEvent에 close method 생성 필요
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	// WorkDesign
+
+
+	public JLabel getJlAll() {
+		return jlAll;
 
 	public String getUserId() {
 		return userId;
@@ -145,12 +136,12 @@ public class WorkDesign extends JFrame {
 
 	public JLabel getJlEnd() {
 		return jlEnd;
+
 	}
 
 	public JTextField getJtfStart() {
 		return jtfStart;
 	}
-
 
 	public JTextField getJtfEnd() {
 		return jtfEnd;
@@ -170,6 +161,7 @@ public class WorkDesign extends JFrame {
 
 	public JButton getJbtnSelect() {
 		return jbtnSelect;
+	}
 
 	public JButton getJbView() {
 		return jbView;
