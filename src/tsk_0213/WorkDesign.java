@@ -18,12 +18,8 @@ public class WorkDesign extends JFrame {
 	private JTextArea jta;
 	private JScrollPane jsp;
 	private JButton jbtnView, jbtnSelect;	// report 버튼 삭제
-	private JLabel jlStart, jlEnd, jlLine, jlLineNumber;
-	private JTextField jtfStart, jtfEnd;
+	private JLabel  jlLine, jlLineNumber;
 	
-
-	private JTextArea jta;
-	private JScrollPane jsp;
 
 	private JButton jbView, jbSelect;
 

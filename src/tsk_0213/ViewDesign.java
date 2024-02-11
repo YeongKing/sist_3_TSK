@@ -62,5 +62,5 @@ public class ViewDesign extends JDialog {
 
 }
 
-}
+
 
