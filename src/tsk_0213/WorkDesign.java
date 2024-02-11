@@ -70,4 +70,40 @@ public class WorkDesign extends JFrame {
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	// WorkDesign
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public JLabel getJlStart() {
+		return jlStart;
+	}
+
+	public JLabel getJlEnd() {
+		return jlEnd;
+	}
+
+	public JTextField getJtfStart() {
+		return jtfStart;
+	}
+
+	public JTextField getJtfEnd() {
+		return jtfEnd;
+	}
+
+	public JTextArea getJta() {
+		return jta;
+	}
+
+	public JScrollPane getJsp() {
+		return jsp;
+	}
+
+	public JButton getJbtnView() {
+		return jbtnView;
+	}
+
+	public JButton getJbtnSelect() {
+		return jbtnSelect;
+	}
+
 }	// class
