@@ -11,9 +11,8 @@ import javax.swing.border.TitledBorder;
 @SuppressWarnings("serial")
 public class WorkDesign extends JFrame {
 	private String userId; // 로그인된 아이디
-	private JLabel jlStart, jlEnd, jlLine, jlLineNumber;
+	private JLabel jlStart, jlEnd;
 	private JTextField jtfStart, jtfEnd;
-	
 
 	private JTextArea jta;
 	private JScrollPane jsp;
@@ -25,9 +24,7 @@ public class WorkDesign extends JFrame {
 		// this.userId = userId;
 		jlStart = new JLabel("시작 라인 범위 : ");
 		jlEnd = new JLabel("마지막 라인 범위 : ");
-		jlLine = new JLabel("라인 수  : ");
-		jlLineNumber = new JLabel();
-		
+
 		jtfStart = new JTextField();
 		jtfEnd = new JTextField();
 
@@ -44,9 +41,6 @@ public class WorkDesign extends JFrame {
 
 		jlStart.setBounds(50, 30, 110, 30);
 		jlEnd.setBounds(280, 30, 110, 30);
-		jlLine.setBounds(530, 30, 110, 30);
-		jlLineNumber.setBounds(600, 30, 110, 30);
-		
 
 		jtfStart.setBounds(145, 30, 120, 30);
 		jtfEnd.setBounds(390, 30, 120, 30);
@@ -58,8 +52,6 @@ public class WorkDesign extends JFrame {
 
 		add(jlStart);
 		add(jlEnd);
-		add(jlLine);
-		add(jlLineNumber);
 
 		add(jtfStart);
 		add(jtfEnd);
@@ -77,14 +69,6 @@ public class WorkDesign extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	}
-
-	public JLabel getJlLine() {
-		return jlLine;
-	}
-
-	public JLabel getJlLineNumber() {
-		return jlLineNumber;
 	}
 
 	public String getUserId() {
