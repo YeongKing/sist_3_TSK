@@ -1,7 +1,5 @@
 package tsk_0213;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -59,8 +57,4 @@ public class ViewDesign extends JDialog {
 		return jlResult;
 	}
 
-
-}
-
-}
-
+}	// class
