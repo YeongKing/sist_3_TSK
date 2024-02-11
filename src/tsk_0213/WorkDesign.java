@@ -19,7 +19,7 @@ public class WorkDesign extends JFrame {
 	private JScrollPane jsp;
 	private JButton jbtnView, jbtnSelect;	// report 버튼 삭제
 
-	private JButton jbView, jbSelect;
+	private JButton jbView, jbSelect, jbReport;
 
 	public WorkDesign(String userId) {
 		super("sist 사용자 로그 분석 프로그램");
@@ -36,11 +36,14 @@ public class WorkDesign extends JFrame {
 		jta.setText("임시 작성된 글, 로그인된 ID : " + userId);
 		jsp = new JScrollPane(jta);
 		jsp.setBorder(new TitledBorder("불러온 Log Data"));
+		
+
 
 		jbtnView = new JButton("View");
 		jbtnSelect = new JButton("File Select");	// 버튼 이름 변경
 		jbView = new JButton("View");
 		jbSelect = new JButton("Select");
+		jbReport = new JButton("Report");
 
 		setLayout(null);
 		setBounds(400, 100, 700, 700);
@@ -60,8 +63,10 @@ public class WorkDesign extends JFrame {
 		add(jlEnd);
 		add(jlAll);
 
+
 		jbView.setBounds(70, 590, 150, 50);
 		jbSelect.setBounds(270, 590, 150, 50);
+		jbReport.setBounds(470, 590, 150, 50);
 
 		add(jlStart);
 		add(jlEnd);
@@ -84,8 +89,54 @@ public class WorkDesign extends JFrame {
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	// WorkDesign
 
+
 	public JLabel getJlAll() {
 		return jlAll;
+
+	public String getUserId() {
+		return userId;
+	}
+
+
+		add(jbView);
+		add(jbSelect);
+		add(jbReport);
+
+
+	public JLabel getJlStart() {
+		return jlStart;
+	}
+
+	public JLabel getJlEnd() {
+		return jlEnd;
+	}
+
+	public JTextField getJtfStart() {
+		return jtfStart;
+	}
+
+
+	public JLabel getJlLine() {
+		return jlLine;
+	}
+
+	public JLabel getJlLineNumber() {
+		return jlLineNumber;
+	}
+
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public JLabel getJlStart() {
+		return jlStart;
+	}
+
+	public JLabel getJlEnd() {
+		return jlEnd;
+
 	}
 
 	public JTextField getJtfStart() {
@@ -120,5 +171,6 @@ public class WorkDesign extends JFrame {
 		return jbSelect;
 
 	}
+
 
 }	// class

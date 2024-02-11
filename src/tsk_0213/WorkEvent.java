@@ -1,15 +1,12 @@
 package tsk_0213;
 
-import java.awt.FileDialog;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.HashMap;
+
+
+public class WorkEvent {
+	private String userId; //로그인성공한 당시 접속된 userId
+	
+	public WorkEvent() {
 
 import javax.swing.JOptionPane;
 
@@ -20,6 +17,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	public WorkEvent(WorkDesign wd) {
 		this.wd = wd;
+
 	}	// WorkEvent
 
 	@Override
@@ -27,6 +25,21 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		JOptionPane.showMessageDialog(null, "윈도우 종료버튼 클릭 확인");
 		wd.dispose();
 	}	// windowClosing
+
+	}
+
+	public static void main(String[] args) {
+
+
+	}
+
+
+
+	public static void main(String[] args) {
+		new WorkEvent();
+	}
+	
+
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
@@ -101,4 +114,9 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	}// openFile
 
+
 }//class
+
+}// class
+
+
