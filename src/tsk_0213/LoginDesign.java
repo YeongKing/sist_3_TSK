@@ -1,5 +1,7 @@
 package tsk_0213;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,73 +12,70 @@ import javax.swing.JTextField;
 public class LoginDesign extends JFrame {
 
 	private JTextField jtfId;
-	private JPasswordField jtfPw;
-
-	private JLabel jlId, jlPw;
-
-	private JButton jbLogin;
+	private JPasswordField jpfPw;	// jtf -> jpw 변경
+	private JLabel jlId, jlPw, jlStatus;
+	private JButton jbtnLogin;	 // jb -> jbtn 변경
 
 	public LoginDesign() {
-		super("로그인");
+		// 타이틀명 변경
+		super("sist 사용자 로그 분석 프로그램 - 로그인");
 		jtfId = new JTextField();
-		jtfPw = new JPasswordField();
+		jpfPw = new JPasswordField();
 
 		jlId = new JLabel("ID");
 		jlPw = new JLabel("PW");
-		jbLogin = new JButton("로그인");
+		jlStatus = new JLabel("아이디와 비밀번호를 입력하세요.");
+		jbtnLogin = new JButton("로그인");
 
 		setLayout(null);//수동배치
-		setBounds(500, 500, 330, 150);
+		setBounds(300, 100, 310, 190);
 
-		jlId.setBounds(30, 20, 50, 30);
-		jlPw.setBounds(30, 60, 50, 30);
-
-		jtfId.setBounds(70, 20, 120, 30);
-		jtfPw.setBounds(70, 60, 120, 30);
-
-		jbLogin.setBounds(200, 20, 90, 70);
+		jlStatus.setBounds(70, 17, 200, 30);
+		jlId.setBounds(30, 60, 50, 30);
+		jlPw.setBounds(30, 100, 50, 30);
+		jtfId.setBounds(70, 60, 120, 30);
+		jpfPw.setBounds(70, 100, 120, 30);
+		jbtnLogin.setBounds(200, 60, 90, 70);
+		
+		jlStatus.setForeground(Color.red);
 
 		add(jlId);
 		add(jlPw);
+		add(jlStatus);
 		add(jtfId);
-		add(jtfPw);
-		add(jbLogin);
+		add(jpfPw);
+		add(jbtnLogin);
 
 		LoginEvent le = new LoginEvent(this);
-
-		jtfId.addKeyListener(le);
-		jtfPw.addKeyListener(le);
-		jbLogin.addActionListener(le);
+		
+		addWindowListener(le);
+		jtfId.addActionListener(le);
+		jpfPw.addActionListener(le);
+		jbtnLogin.addActionListener(le);
 
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	}	// LoginDesign
 
 	public JTextField getJtfId() {
 		return jtfId;
 	}
 
-	public JPasswordField getJtfPw() {
-		return jtfPw;
+	public JPasswordField getJpfPw() {
+		return jpfPw;
 	}
-
-	public JLabel getJlId() {
-		return jlId;
+	
+	// getJlId, Pw 삭제, getJlStatus 추가
+	public JLabel getJlStatus() {
+		return jlStatus;
 	}
-
-	public JLabel getJlPw() {
-		return jlPw;
-	}
-
-	public JButton getJbLogin() {
-		return jbLogin;
+	
+	public JButton getJbtnLogin() {
+		return jbtnLogin;
 	}
 
 	// MemberVO에 따라 디자인 변경
 	public static void main(String[] args) {
-
 		new LoginDesign(); // LoginDesign 객체 생성
-	}
+	}	// main
 
-
-}
+}	// class

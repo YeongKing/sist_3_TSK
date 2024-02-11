@@ -9,13 +9,13 @@ public class MemberVO {
         this.id = id;
         this.password = password;
         this.chmodRWX = chmodRWX;
-    }
+    }	// MemberVO
 
     MemberVO(String id, String password) {
         this.id = id;
         this.password = password;
         this.chmodRWX = false;
-    }
+    }	// MemberVO
 
     public String getId() {
         return id;
@@ -28,4 +28,4 @@ public class MemberVO {
     public boolean isChmodRWX() {
         return chmodRWX;
     }
-}
+}// class
