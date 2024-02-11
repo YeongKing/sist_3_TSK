@@ -17,7 +17,7 @@ public class WorkDesign extends JFrame {
 	private JTextArea jta;
 	private JScrollPane jsp;
 
-	private JButton jbView, jbSelect;
+	private JButton jbView, jbSelect, jbReport;
 
 	public WorkDesign(String userId) {
 
@@ -32,9 +32,12 @@ public class WorkDesign extends JFrame {
 		jta.setText("임시작성된 글 , 로그인된 ID : " + userId);
 		jsp = new JScrollPane(jta);
 		jsp.setBorder(new TitledBorder("불러온 Log Data"));
+		
+
 
 		jbView = new JButton("View");
 		jbSelect = new JButton("Select");
+		jbReport = new JButton("Report");
 
 		setLayout(null);
 		setBounds(100, 100, 700, 700);
@@ -47,8 +50,10 @@ public class WorkDesign extends JFrame {
 
 		jsp.setBounds(40, 70, 610, 500);
 
+
 		jbView.setBounds(70, 590, 150, 50);
 		jbSelect.setBounds(270, 590, 150, 50);
+		jbReport.setBounds(470, 590, 150, 50);
 
 		add(jlStart);
 		add(jlEnd);
@@ -58,53 +63,15 @@ public class WorkDesign extends JFrame {
 
 		add(jsp);
 
+
 		add(jbView);
 		add(jbSelect);
-
-		WorkEvent we = new WorkEvent(this);
-		addWindowListener(we);
-		jbView.addActionListener(we);
-		jbSelect.addActionListener(we);
+		add(jbReport);
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 
-	public String getUserId() {
-		return userId;
-	}
-
-	public JLabel getJlStart() {
-		return jlStart;
-	}
-
-	public JLabel getJlEnd() {
-		return jlEnd;
-	}
-
-	public JTextField getJtfStart() {
-		return jtfStart;
-	}
-
-	public JTextField getJtfEnd() {
-		return jtfEnd;
-	}
-
-	public JTextArea getJta() {
-		return jta;
-	}
-
-	public JScrollPane getJsp() {
-		return jsp;
-	}
-
-	public JButton getJbView() {
-		return jbView;
-	}
-
-	public JButton getJbSelect() {
-		return jbSelect;
-	}
 
 }
