@@ -41,4 +41,8 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 
 	}
 
+
 }
+
+}
+
