@@ -53,6 +53,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	private void openFile() {
 		int lineCount = 0;
+		int startCount = 0;
 		wd.getJta().setText("");
 		FileDialog openFile = new FileDialog(wd, "열기", FileDialog.LOAD);
 		openFile.setVisible(true);
@@ -88,6 +89,11 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 				lineCount++;
 
 			}
+			if(!sb.isEmpty()) {
+				startCount =1;
+				
+			}
+			
 			br.close();
 
 		} catch (IOException ie) {
@@ -97,7 +103,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		wd.setTitle(openFileString);
 
 		wd.getJlLineNumber().setText(Integer.toString(lineCount));
-		wd.getJtfStart().setText("0");
+		wd.getJtfStart().setText(Integer.toString(startCount));
 		wd.getJtfEnd().setText(Integer.toString(lineCount));
 	}// openFile
 
