@@ -35,25 +35,28 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		if (ae.getSource() == wd.getJbView()) {
-			// jbView버튼 클릭시
+		if (ae.getSource()==wd.getJbView()) {
+			//jbView버튼 클릭시
 			JOptionPane.showMessageDialog(null, "jbView버튼 클릭 확인");
-			ViewDesign viewDesign = new ViewDesign(wd, true); // ViewDesign 클래스의 객체 생성
-			viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
-
+	        ViewDesign viewDesign = new ViewDesign(wd, true); // ViewDesign 클래스의 객체 생성
+	        viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+			
+			
 		}
-		if (ae.getSource() == wd.getJbSelect()) {
-			// jbSelect버튼 클릭시
+		if (ae.getSource()==wd.getJbSelect()) {
+			//jbSelect버튼 클릭시
 			JOptionPane.showMessageDialog(null, "jbSelect버튼 클릭 확인");
 			openFile();
-
+			
+			
+			
 		}
-
+		
+		
+		
 	}
-
+	
 	private void openFile() {
-		int lineCount = 0;
-		int startCount = 0;
 		wd.getJta().setText("");
 		FileDialog openFile = new FileDialog(wd, "열기", FileDialog.LOAD);
 		openFile.setVisible(true);
@@ -86,14 +89,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 				wd.getJta().append(str + "\n");
 				sb.append(str + "\n");
-				lineCount++;
 
 			}
-			if(!sb.isEmpty()) {
-				startCount =1;
-				
-			}
-			
 			br.close();
 
 		} catch (IOException ie) {
@@ -102,9 +99,11 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 		wd.setTitle(openFileString);
 
-		wd.getJlLineNumber().setText(Integer.toString(lineCount));
-		wd.getJtfStart().setText(Integer.toString(startCount));
-		wd.getJtfEnd().setText(Integer.toString(lineCount));
-	}// openFile
 
-}// class
+	}// openFile
+	
+
+
+}//class
+
+
