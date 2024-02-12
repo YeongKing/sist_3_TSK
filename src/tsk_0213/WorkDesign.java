@@ -30,6 +30,8 @@ public class WorkDesign extends JFrame {
 		jtfEnd = new JTextField();
 
 		jta = new JTextArea();
+		// added jta setEditable false
+		jta.setEditable(false);
 		jta.setText("임시 작성된 글, 로그인된 ID : " + userId);
 		jsp = new JScrollPane(jta);
 		jsp.setBorder(new TitledBorder("불러온 Log Data"));
@@ -62,6 +64,8 @@ public class WorkDesign extends JFrame {
 		WorkEvent we = new WorkEvent(this);
 
 		addWindowListener(we);
+		jtfStart.addActionListener(we);	// jtfStart, jtfEnd actionlistener 추가
+		jtfEnd.addActionListener(we);
 		jbtnView.addActionListener(we);
 		jbtnSelect.addActionListener(we);
 
