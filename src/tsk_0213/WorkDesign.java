@@ -10,34 +10,34 @@ import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class WorkDesign extends JFrame {
-	
+
 	private String userId; // 로그인된 아이디
-	
+
 	private JLabel jlStart, jlEnd, jlAll;	// jlAll(총 라인 수) 추가
 	private JTextField jtfStart, jtfEnd;
 	private JTextArea jta;
 	private JScrollPane jsp;
+
 	private JButton jbtnView, jbtnSelect;	// report 버튼 삭제
 	private JLabel  jlLine, jlLineNumber;
 	
 
 	private JButton jbView, jbSelect;
 
+
 	public WorkDesign(String userId) {
 		super("sist 사용자 로그 분석 프로그램");
 
-		// this.userId = userId;
-		jlStart = new JLabel("시작 라인 범위 : ");
-		jlEnd = new JLabel("마지막 라인 범위 : ");
+		jlStart = new JLabel("시작 라인 : ");
+		jlEnd = new JLabel("마지막 라인 : ");
 		jlAll = new JLabel("총 라인 수: ");
 
-		jlLine = new JLabel("라인 수  : ");
-		jlLineNumber = new JLabel();
-		
 		jtfStart = new JTextField();
 		jtfEnd = new JTextField();
 
 		jta = new JTextArea();
+		// added jta setEditable false
+		jta.setEditable(false);
 		jta.setText("임시 작성된 글, 로그인된 ID : " + userId);
 		jsp = new JScrollPane(jta);
 		jsp.setBorder(new TitledBorder("불러온 Log Data"));
@@ -52,9 +52,6 @@ public class WorkDesign extends JFrame {
 		jlStart.setBounds(50, 30, 110, 30);
 		jlEnd.setBounds(280, 30, 110, 30);
 		jlAll.setBounds(550, 30, 100, 30);
-		jlLine.setBounds(530, 30, 110, 30);
-		jlLineNumber.setBounds(600, 30, 110, 30);
-		
 
 		jtfStart.setBounds(145, 30, 120, 30);
 		jtfEnd.setBounds(390, 30, 120, 30);
@@ -66,18 +63,20 @@ public class WorkDesign extends JFrame {
 		add(jlEnd);
 		add(jlAll);
 
-
 		add(jtfStart);
 		add(jtfEnd);
 		add(jsp);
 		add(jbtnView);
 		add(jbtnSelect);
-		
+
 		WorkEvent we = new WorkEvent(this);
-		
+
 		addWindowListener(we);
+		jtfStart.addActionListener(we);	// jtfStart, jtfEnd actionlistener 추가
+		jtfEnd.addActionListener(we);
 		jbtnView.addActionListener(we);
 		jbtnSelect.addActionListener(we);
+
 
 		add(jbtnView);
 		add(jbtnSelect);
@@ -101,6 +100,7 @@ public class WorkDesign extends JFrame {
 
 	public JLabel getJlEnd() {
 		return jlEnd;
+
 	}
 
 	public JLabel getJlAll() {
@@ -129,6 +129,7 @@ public class WorkDesign extends JFrame {
 
 	public JButton getJbtnSelect() {
 		return jbtnSelect;
+
 	}
 
 	public JLabel getJlLine() {
@@ -147,3 +148,4 @@ public class WorkDesign extends JFrame {
 		return jbSelect;
 	}
 }	// class
+
