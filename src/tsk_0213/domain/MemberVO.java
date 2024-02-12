@@ -5,13 +5,13 @@ public class MemberVO {
     private String password;
     private boolean chmodRWX;
 
-    MemberVO(String id, String password, boolean chmodRWX) {
+    public MemberVO(String id, String password, boolean chmodRWX) {
         this.id = id;
         this.password = password;
         this.chmodRWX = chmodRWX;
     }	// MemberVO
 
-    MemberVO(String id, String password) {
+    public MemberVO(String id, String password) {
         this.id = id;
         this.password = password;
         this.chmodRWX = false;
