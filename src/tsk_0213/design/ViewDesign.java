@@ -5,6 +5,9 @@ import tsk_0213.event.ViewEvent;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
@@ -14,9 +17,12 @@ public class ViewDesign extends JDialog {
 
 	private JButton jbReport, jbOk;
 
-	private JLabel jlResult;
+	private JTextArea jtaResult;
+	private JScrollPane jsp ;
+	
 
-	public ViewDesign(WorkDesign wd, boolean modal) {
+
+	public ViewDesign(String result,WorkDesign wd, boolean modal) {
 		super(wd, modal);
 		this.wd = wd;
 
@@ -24,18 +30,21 @@ public class ViewDesign extends JDialog {
 
 		setBounds(100, 100, 700, 700);
 
-		jlResult = new JLabel("JLabel Test");
-		jlResult.setBorder(new TitledBorder("결과물"));
+		jtaResult = new JTextArea(result);
+		jtaResult.setBorder(new TitledBorder("결과물"));
+		jsp = new JScrollPane(jtaResult);
+		jtaResult.setEditable(false);
+		
 		jbReport = new JButton("Report");
 		jbOk = new JButton("Ok");
 
 		jbReport.setBounds(500, 50, 150, 50);
 		jbOk.setBounds(500, 120, 150, 50);
-		jlResult.setBounds(20, 20, 450, 600);
+		jsp.setBounds(20, 20, 450, 600);
 
 		add(jbReport);
 		add(jbOk);
-		add(jlResult);
+		add(jsp);
 
 		ViewEvent ve = new ViewEvent(this);
 		jbReport.addActionListener(ve);
@@ -55,8 +64,8 @@ public class ViewDesign extends JDialog {
 		return jbOk;
 	}
 
-	public JLabel getJlResult() {
-		return jlResult;
+	public JTextArea getJtaResult() {
+		return jtaResult;
 	}
 
 
