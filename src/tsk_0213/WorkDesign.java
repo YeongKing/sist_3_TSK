@@ -17,7 +17,13 @@ public class WorkDesign extends JFrame {
 	private JTextField jtfStart, jtfEnd;
 	private JTextArea jta;
 	private JScrollPane jsp;
-	private JButton jbtnView, jbtnSelect;
+
+	private JButton jbtnView, jbtnSelect;	// report 버튼 삭제
+	private JLabel  jlLine, jlLineNumber;
+	
+
+	private JButton jbView, jbSelect;
+
 
 	public WorkDesign(String userId) {
 		super("sist 사용자 로그 분석 프로그램");
@@ -39,6 +45,7 @@ public class WorkDesign extends JFrame {
 		jbtnView = new JButton("View");
 		jbtnSelect = new JButton("File Select");	// 버튼 이름 변경
 
+
 		setLayout(null);
 		setBounds(400, 100, 700, 700);
 
@@ -55,6 +62,7 @@ public class WorkDesign extends JFrame {
 		add(jlStart);
 		add(jlEnd);
 		add(jlAll);
+
 		add(jtfStart);
 		add(jtfEnd);
 		add(jsp);
@@ -69,8 +77,31 @@ public class WorkDesign extends JFrame {
 		jbtnView.addActionListener(we);
 		jbtnSelect.addActionListener(we);
 
+
+		add(jbtnView);
+		add(jbtnSelect);
+
 		setVisible(true);
-	}	// WorkDesign
+		// 제거 후 WorkEvent에 close method 생성 필요
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// WorkDesign
+		
+		
+
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public JLabel getJlStart() {
+		return jlStart;
+	}
+
+	public JLabel getJlEnd() {
+		return jlEnd;
+
+	}
 
 	public JLabel getJlAll() {
 		return jlAll;
@@ -98,5 +129,23 @@ public class WorkDesign extends JFrame {
 
 	public JButton getJbtnSelect() {
 		return jbtnSelect;
+
+	}
+
+	public JLabel getJlLine() {
+		return jlLine;
+	}
+
+	public JLabel getJlLineNumber() {
+		return jlLineNumber;
+	}
+
+	public JButton getJbView() {
+		return jbView;
+	}
+
+	public JButton getJbSelect() {
+		return jbSelect;
 	}
 }	// class
+

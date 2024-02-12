@@ -121,6 +121,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		wd.setTitle(openFileString);
 
 		wd.getJlAll().setText(Integer.toString(lineCount));
+
 		wd.getJtfStart().setText(Integer.toString(startCount));
 		wd.getJtfEnd().setText(Integer.toString(lineCount));
 	}
@@ -175,19 +176,21 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 				status = parts[0].replace("[", "").replace("]", "");
 				browser = parts[2];
 				key = "";
-				requestTime = parts[3].replace("]", "").replace("ora", "");
-				
+
+				requestTime = parts[3].replace("]", "").replace("ora", "00");
+
 				//books 가 포함되있을시 true로 
 				if (parts[1].contains("books")) {
 					isBook = true;
 				}
 				
 				//요청 시간(hour) 을 저장
-				sdf = new SimpleDateFormat("HH");
+				
+				sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				datetHour = sdf.parse(requestTime);
                 String requestHour = new SimpleDateFormat("HH").format(datetHour);
-
-				
+                System.out.println(requestHour);
+                
 				//key값 저장하기 , key가 없으면 null반환 하고 있으면 "key="의 다음 인덱스부터 "&"전까지 저장
 				keyIndex = line.indexOf("key=");
 				if (keyIndex != -1) {
@@ -253,7 +256,70 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
       }
 
 
+				
+				//key값 저장하기 , key가 없으면 null반환 하고 있으면 "key="의 다음 인덱스부터 "&"전까지 저장
+				keyIndex = line.indexOf("key=");
+				if (keyIndex != -1) {
+					keyIndex += 4;
+					endIndex = line.indexOf("&", keyIndex);
+					key = line.substring(keyIndex, endIndex);
+				} else {
+					key = null;
+				}
 
+				// 키별 요청 횟수 계산 
+				keyCounts.put(key, keyCounts.getOrDefault(key, 0) + 1);
+
+				// 브라우저별 접속 횟수 계산
+				browserCounts.put(browser, browserCounts.getOrDefault(browser, 0) + 1);
+				
+				// 시간별 접속 횟수 계산
+				timeCounts.put(requestHour, timeCounts.getOrDefault(requestHour, 0)+1);
+
+				// 성공(200) 및 실패(404) 횟수 계산
+				if ("200".equals(status)) {
+					successCount++;
+				} else if ("404".equals(status)) {
+					failureCount++;
+				}
+
+				// books 요청에 대한 에러(500) 횟수 계산
+				if ("500".equals(status) && isBook) {
+					booksErrorCount++;
+				}
+
+				// 비정상적인 요청(403) 횟수 계산
+				if ("403".equals(status)) {
+					abnormalRequestCount++;
+				}
+				
+			}
+		}
+		// 가장 많이 사용된 키와 횟수 찾기
+		for (Map.Entry<String, Integer> keyEntry : keyCounts.entrySet()) {
+			if (keyEntry.getValue() > maxRequestKeyCount) {
+				maxRequestKeyCount = keyEntry.getValue();
+				maxRequestKey = keyEntry.getKey();
+			}
+		}
+		
+		//요청이 가장 많은 시간 찾기
+		for(Map.Entry<String, Integer> timeEntry : timeCounts.entrySet()) {
+			if(timeEntry.getValue() > maxRequestHourCount) {
+				maxRequestHourCount = timeEntry.getValue();
+				maxRequestHour = timeEntry.getKey();
+			}
+		}
+		// 결과 출력
+		System.out.println("가장 많이 사용된 키: " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")");
+		System.out.println("브라우저별 접속 횟수: " + browserCounts);
+		System.out.println("성공적으로 수행한 횟수(200): " + successCount);
+        System.out.println("실패한 횟수(404): " + failureCount);
+//        System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
+        System.out.println("비정상적인 요청(403) 횟수: " + abnormalRequestCount);
+        System.out.println("books 요청에 대한 에러(500) 횟수: " + booksErrorCount);
+        System.out.println("가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount);
+      }
 
     }
 	

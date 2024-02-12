@@ -57,4 +57,6 @@ public class ViewDesign extends JDialog {
 		return jlResult;
 	}
 
+
+
 }	// class

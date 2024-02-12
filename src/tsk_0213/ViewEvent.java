@@ -37,4 +37,8 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 		vd.dispose();
 	}	// windowClosing
 
-}	// class
+	}
+
+
+}
+
