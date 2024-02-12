@@ -19,7 +19,6 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	public WorkEvent(WorkDesign wd) {
 		this.wd = wd;
-
 	}   // WorkEvent
 
 	@Override
@@ -30,25 +29,34 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
+		if (ae.getSource() == wd.getJbtnSelect()) {
+			//jbtnSelect버튼 클릭시
+			JOptionPane.showMessageDialog(null, "jbtnSelect버튼 클릭 확인");
+			openFile();
+		}   // end if
+
+
 		if (ae.getSource() == wd.getJbtnView()) {
-			//jbView버튼 클릭시
-			JOptionPane.showMessageDialog(null, "jbView버튼 클릭 확인");
+			// added jtfStart, jtfEnd null check method
+			if(!chkNull()) {
+				return;
+			}	// end if
+			
+			//jbtnView버튼 클릭시
+			JOptionPane.showMessageDialog(null, "jbtnView버튼 클릭 확인");
 			ViewDesign viewDesign = new ViewDesign(wd, true); // ViewDesign 클래스의 객체 생성
 			viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
 		}   // end if
 
-		if (ae.getSource() == wd.getJbtnSelect()) {
-			//jbSelect버튼 클릭시
-			JOptionPane.showMessageDialog(null, "jbSelect버튼 클릭 확인");
-			openFile();
-		}   // end if
+		// added jtfStart, jtfEnd null check method
+		chkNull();
 	}   // actionPerformed
 
 	private void openFile() {
 		if (wd == null) {
 			JOptionPane.showMessageDialog(null, "WorkDesign 객체가 초기화되지 않았습니다.");
 			return;
-		}
+		}	// end if
 
 		int lineCount = 0;
 		int startCount = 0;
@@ -81,9 +89,10 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 			String str = "";
 			while ((str = br.readLine()) != null) {
-				wd.getJta().append(str + "\n");
-				sb.append(str + "\n");
 				lineCount++;
+				// added lineCount at jta
+				wd.getJta().append(lineCount + ". " + str + "\n");
+				sb.append(str + "\n");
 			}   // end while
 
 			if (!sb.isEmpty()) {
@@ -102,8 +111,26 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 					br.close();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}
-			}
+				}	// end catch
+			}	// end if
 		}   // end catch
 	}   // openFile
+	
+	// added jtfStrat, jtfEnd null check method
+	public boolean chkNull() {
+		String inputStart = wd.getJtfStart().getText().trim();
+		String inputEnd = wd.getJtfEnd().getText().trim();
+		
+		if(inputStart.isEmpty()) {
+			wd.getJtfStart().requestFocus();
+			JOptionPane.showMessageDialog(null, "시작 라인을 입력하세요.");
+			return false;
+		}	// end if
+		if(inputEnd.isEmpty()) {
+			wd.getJtfEnd().requestFocus();
+			JOptionPane.showMessageDialog(null, "마지막 라인을 입력하세요.");
+			return false;
+		}	// end if
+		return true;
+	}	// chkNull
 }   // class
