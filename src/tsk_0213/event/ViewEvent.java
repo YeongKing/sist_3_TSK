@@ -6,6 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
@@ -23,6 +28,7 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 		if(ae.getSource()==vd.getJbReport()) {
 			//JbReport버튼 클릭시
 			JOptionPane.showMessageDialog(null, "JbReport버튼 클릭 확인");
+			downloadFile();
 		}	// end if
 		
 		if(ae.getSource()==vd.getJbOk()) {
@@ -39,6 +45,59 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 		vd.dispose();
 	}	// windowClosing
 
+	private void downloadFile() {
+
+		// System.out.println("리포트버튼 클릭");
+		System.out.println(vd.getWd().getUserId());
+		if(vd.getWd().getUserId().equals("root")) {
+			/*"root계정일경우 리포트 버튼 동작 X"*/
+			JOptionPane.showMessageDialog(null, "root계정은 Report버튼을 실행할 수 없습니다.");
+			return;
+			
+			
+			
+			
+			
+		}//end if
+		File fileDir = new File("c:/dev/report");
+
+		fileDir.mkdirs();
+		long time = System.currentTimeMillis();
+		File file = new File("c:/dev/report/report_" + time + ".dat");
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
+
+
+	
+		
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+
+			bw.write("--------------------------------------------------------\n");
+			bw.write(vd.getWd().getFileName() +" log 생성된 날짜  : " +sdf.format(time) +" )\n");
+			bw.write("--------------------------------------------------------\n");
+
+			String msg = vd.getJtaResult().getText();
+
+			bw.write(msg);
+
+			bw.flush();
+			bw.close();
+
+		} catch (IOException ie) {
+			ie.printStackTrace();
+		} // end catch
+
+		
+		
+		
+		
+	
+	}// downloadFile
+
+	
+	
+	
+	
 }
 
 

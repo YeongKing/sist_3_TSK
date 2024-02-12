@@ -25,10 +25,14 @@ public class WorkDesign extends JFrame {
 	
 
 	private JButton jbView, jbSelect;
+	private String fileName = null;
 
 
 	public WorkDesign(String userId) {
 		super("sist 사용자 로그 분석 프로그램");
+		
+		this.userId = userId; //ViewEvent에서 report권한 확인시 필요하여 추가
+		
 
 		jlStart = new JLabel("시작 라인 : ");
 		jlEnd = new JLabel("마지막 라인 : ");
@@ -90,6 +94,14 @@ public class WorkDesign extends JFrame {
 		
 		
 
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public String getUserId() {
