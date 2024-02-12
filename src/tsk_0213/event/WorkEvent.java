@@ -1,4 +1,7 @@
-package tsk_0213;
+package tsk_0213.event;
+
+import tsk_0213.design.ViewDesign;
+import tsk_0213.design.WorkDesign;
 
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;

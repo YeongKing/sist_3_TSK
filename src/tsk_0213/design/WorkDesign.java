@@ -1,4 +1,6 @@
-package tsk_0213;
+package tsk_0213.design;
+
+import tsk_0213.event.WorkEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

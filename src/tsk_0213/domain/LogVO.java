@@ -1,4 +1,4 @@
-package tsk_0213;
+package tsk_0213.domain;
 
 public class LogVO {
 	//사이트 방문 횟수 변수

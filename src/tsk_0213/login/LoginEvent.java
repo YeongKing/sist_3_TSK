@@ -1,4 +1,7 @@
-package tsk_0213;
+package tsk_0213.login;
+
+import tsk_0213.domain.MemberVO;
+import tsk_0213.design.WorkDesign;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

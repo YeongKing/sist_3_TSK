@@ -1,4 +1,6 @@
-package tsk_0213;
+package tsk_0213.event;
+
+import tsk_0213.design.ViewDesign;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

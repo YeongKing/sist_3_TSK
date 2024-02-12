@@ -1,4 +1,4 @@
-package tsk_0213;
+package tsk_0213.domain;
 
 public class MemberVO {
     private String id;
