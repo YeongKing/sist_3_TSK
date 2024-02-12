@@ -44,8 +44,7 @@ public class WorkDesign extends JFrame {
 
 		jbtnView = new JButton("View");
 		jbtnSelect = new JButton("File Select");	// 버튼 이름 변경
-		jbView = new JButton("View");
-		jbSelect = new JButton("Select");
+
 
 		setLayout(null);
 		setBounds(400, 100, 700, 700);
@@ -67,13 +66,6 @@ public class WorkDesign extends JFrame {
 		add(jlEnd);
 		add(jlAll);
 
-		jbView.setBounds(70, 590, 150, 50);
-		jbSelect.setBounds(270, 590, 150, 50);
-
-		add(jlStart);
-		add(jlEnd);
-		add(jlLine);
-		add(jlLineNumber);
 
 		add(jtfStart);
 		add(jtfEnd);
@@ -87,44 +79,16 @@ public class WorkDesign extends JFrame {
 		jbtnView.addActionListener(we);
 		jbtnSelect.addActionListener(we);
 
+		add(jbtnView);
+		add(jbtnSelect);
 
 		setVisible(true);
 		// 제거 후 WorkEvent에 close method 생성 필요
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}	// WorkDesign
+		// WorkDesign
+		
+		
 
-	public String getUserId() {
-		return userId;
-	}
-
-		add(jbView);
-		add(jbSelect);
-
-		WorkEvent we = new WorkEvent(this);
-		addWindowListener(we);
-		jbView.addActionListener(we);
-		jbSelect.addActionListener(we);
-
-
-	public JLabel getJlStart() {
-		return jlStart;
-	}
-
-	public JLabel getJlEnd() {
-		return jlEnd;
-	}
-
-	public JTextField getJtfStart() {
-		return jtfStart;
-	}
-
-
-	public JLabel getJlLine() {
-		return jlLine;
-	}
-
-	public JLabel getJlLineNumber() {
-		return jlLineNumber;
 	}
 
 	public String getUserId() {
@@ -139,10 +103,13 @@ public class WorkDesign extends JFrame {
 		return jlEnd;
 	}
 
+	public JLabel getJlAll() {
+		return jlAll;
+	}
+
 	public JTextField getJtfStart() {
 		return jtfStart;
 	}
-
 
 	public JTextField getJtfEnd() {
 		return jtfEnd;
@@ -162,6 +129,15 @@ public class WorkDesign extends JFrame {
 
 	public JButton getJbtnSelect() {
 		return jbtnSelect;
+	}
+
+	public JLabel getJlLine() {
+		return jlLine;
+	}
+
+	public JLabel getJlLineNumber() {
+		return jlLineNumber;
+	}
 
 	public JButton getJbView() {
 		return jbView;
@@ -169,7 +145,5 @@ public class WorkDesign extends JFrame {
 
 	public JButton getJbSelect() {
 		return jbSelect;
-
 	}
-
 }	// class
