@@ -71,21 +71,26 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 			// 로그분석 메서드 실행
 			try {
+				if((Integer.parseInt(wd.getJlStart().getText()) <= Integer.parseInt(wd.getJlEnd().getText())) 
+						&& Integer.parseInt(wd.getJlEnd().getText()) <= Integer.parseInt(wd.getJlAll().getText())) {
 				viewLog(openFileString);
-				// 결과 출력
-				
 				String result = "가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수 : " + browserCounts+"\n성공적으로 수행한 횟수(200) : " 
 						+ successCount+"\n실패한 횟수(404) : " + failureCount + "\n비정상적인 요청(403) 횟수 : " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수 : " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
-				
-				// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
-				
-				
-				
-				ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
-				viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+
+						// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
+
+						
+						
+						ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
+						viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "에러");
-			} 
+				return;
+			}
+			// 결과 출력
+			
+
 		}
 		
 		
@@ -166,15 +171,13 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br;
-		
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(openFileString)));
 
 			String str = "";
-			int checkLineNumber = 1;
 			while ((str = br.readLine()) != null) {
 
-				wd.getJta().append(checkLineNumber++ +". " + str + "\n");
+				wd.getJta().append(str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
 			}
@@ -191,7 +194,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 		wd.setTitle(openFileString);
 
-		wd.getJlAll().setText("불러온 라인 수 :" + Integer.toString(lineCount));
+		wd.getJlAll().setText(Integer.toString(lineCount));
 
 		wd.getJtfStart().setText(Integer.toString(startCount));
 		wd.getJtfEnd().setText(Integer.toString(lineCount));
@@ -207,6 +210,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	 */
 	public void viewLog(String openFileString) throws IOException, ParseException {
 		// 변수 초기화
+		
 		Map<String, Integer> keyCounts = new HashMap<String, Integer>();
 		browserCounts = new HashMap<String, Integer>();
 		Map<String, Integer> timeCounts = new HashMap<String, Integer>();
@@ -312,7 +316,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			}
 				checkLine++;
 			}
-		}
+		
 		// 가장 많이 사용된 키와 횟수 찾기
 		for (Map.Entry<String, Integer> keyEntry : keyCounts.entrySet()) {
 			if (keyEntry.getValue() > maxRequestKeyCount) {
@@ -328,6 +332,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 				maxRequestHour = timeEntry.getKey();
 			}
 		}
+		}
+
 
 	}
 
