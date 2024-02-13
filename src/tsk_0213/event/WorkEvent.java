@@ -1,8 +1,5 @@
 package tsk_0213.event;
 
-import tsk_0213.design.ViewDesign;
-import tsk_0213.design.WorkDesign;
-
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +16,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import tsk_0213.design.ViewDesign;
+import tsk_0213.design.WorkDesign;
 
 public class WorkEvent extends WindowAdapter implements ActionListener {
 
@@ -44,11 +43,11 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	
 	private Map<String, Integer> browserCounts;
 
-
+	
 	
 	
 	public WorkEvent(WorkDesign wd) {
-		wd.setTitle("작업");
+//		wd.setTitle("작업");
 		this.wd = wd;
 	}
 
@@ -71,21 +70,43 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 			// 로그분석 메서드 실행
 			try {
-				viewLog(openFileString);
-				// 결과 출력
 				
-				String result = "가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수 : " + browserCounts+"\n성공적으로 수행한 횟수(200) : " 
-						+ successCount+"\n실패한 횟수(404) : " + failureCount + "\n비정상적인 요청(403) 횟수 : " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수 : " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
+				int start = Integer.parseInt(wd.getJtfStart().getText());
+				int end = Integer.parseInt(wd.getJtfEnd().getText());
+				int all = Integer.parseInt(wd.getJlAll().getText().substring(10));
 				
-				// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
+//				System.out.println(start + " " + end + " " + all);
+
+//				numberCheck(start);
+//				numberCheck(end);
+
+				if((start <= end) && (end <= all) && (start!=0) && (end!=0)) {
 				
-				
-				
-				ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
-				viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+					viewLog(openFileString);
+					
+					String result = "1. 가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + "회)\n"
+					+ "2. 브라우저별 접속 횟수 : " + browserCounts+"\n"
+					+ "3. 성공적으로 수행한 횟수(200) : " + successCount+"회\n"
+					+ "4. 가장 많은 요청 시간 : " + maxRequestHour + "시\n" /*"횟수 : " + maxRequestHourCount*/ 
+					+ "5. 실패한 횟수(404) : " + failureCount + "회\n"
+					+ "6. 비정상적인 요청(403) 횟수 : " + abnormalRequestCount + "회\n"
+					+ "7. books 요청에 대한 에러(500) 횟수 : " + booksErrorCount + "회";
+					
+					// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
+					
+					
+					
+					ViewDesign viewDesign = new ViewDesign(result , wd, true); // ViewDesign 클래스의 객체 생성
+					viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+					
+				} else {
+					throw new Exception();
+				}
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "에러");
-			} 
+				JOptionPane.showMessageDialog(null, "시작라인, 마지막라인을 확인해주세요.");
+				return;
+			}
+			// 결과 출력
 		}
 		
 		
@@ -108,23 +129,25 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	
 	public void numberCheck(String numbercheck) {
 
+		System.out.println(numbercheck);
 	    // 입력된문자열이 빈문자열이거나 null일경우
 	    if (numbercheck == null || numbercheck.isEmpty()) {
 	        // 처리할 내용이 있다면 이곳에 추가합니다.
+//	    	JOptionPane.showMessageDialog(null, "시작라인 또는 마지막라인을 입력해주세요.");
 	        return; // 예외 상황 처리 후 메서드를 종료합니다.
 	    }
-
+	    
 	    // 입력된문자열이 숫자로만 이루어져 있을 경우(구현되었음) &&  (입력된 숫자가 시작라인 끝라인 사이의 수 이면서 끝라인의 수가 시작라인의 수보다 커야함)> 미구현되었음
 	    if (!numbercheck.matches("\\d+")) {
 	        // 숫자로만 구성되어 있지 않으면 예외처리
-	        System.out.println("입력된 문자열은 숫자로만 구성되어야 합니다.");
+//	        System.out.println("입력된 문자열은 숫자로만 구성되어야 합니다.");
 	        return; //얼리리턴
 	    }
 
 	    try {
 	        // 문자열을 정수로 변환
 	         number = Integer.parseInt(numbercheck);
-
+	         
 	    } catch (NumberFormatException e) {
 	        System.out.println("올바른 숫자 형식이 아닙니다.");
 	        e.printStackTrace(); // 디버깅을 위해 예외 내용을 출력합니다.
@@ -192,7 +215,11 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		wd.setTitle(openFileString);
 
 		wd.getJlAll().setText("불러온 라인 수 :" + Integer.toString(lineCount));
-
+		
+		// 파일 선택 후 수정 가능 설정
+		wd.getJtfStart().setEditable(true);
+		wd.getJtfEnd().setEditable(true);
+		
 		wd.getJtfStart().setText(Integer.toString(startCount));
 		wd.getJtfEnd().setText(Integer.toString(lineCount));
 
