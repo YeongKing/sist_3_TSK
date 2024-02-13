@@ -1,6 +1,6 @@
 package tsk_0213;
 
-import tsk_0213.login.LoginDesign;
+import tsk_0213.design.LoginDesign;
 
 public class RunTeamHomeWork {
 

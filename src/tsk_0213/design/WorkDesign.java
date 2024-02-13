@@ -86,6 +86,8 @@ public class WorkDesign extends JFrame {
 
 		add(jbtnView);
 		add(jbtnSelect);
+		
+		setLocationRelativeTo(null);
 
 		setVisible(true);
 		// 제거 후 WorkEvent에 close method 생성 필요

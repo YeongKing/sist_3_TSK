@@ -1,4 +1,4 @@
-package tsk_0213.login;
+package tsk_0213.design;
 
 import java.awt.Color;
 
@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import tsk_0213.event.LoginEvent;
 
 @SuppressWarnings("serial")
 public class LoginDesign extends JFrame {
@@ -19,6 +21,7 @@ public class LoginDesign extends JFrame {
 	public LoginDesign() {
 		// 타이틀명 변경
 		super("sist 사용자 로그 분석 프로그램 - 로그인");
+		
 		jtfId = new JTextField();
 		jpfPw = new JPasswordField();
 
@@ -52,6 +55,8 @@ public class LoginDesign extends JFrame {
 		jtfId.addActionListener(le);
 		jpfPw.addActionListener(le);
 		jbtnLogin.addActionListener(le);
+		
+		setLocationRelativeTo(null);
 
 		setVisible(true);
 	}	// LoginDesign

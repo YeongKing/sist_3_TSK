@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class WorkEvent extends WindowAdapter implements ActionListener {
@@ -38,6 +39,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	private String maxRequestHour;
 	private int maxRequestHourCount;
 	private int number;
+	private boolean isFileLoaded; //파일 선택 여부 확인
 
 	
 	private Map<String, Integer> browserCounts;
@@ -59,8 +61,13 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getSource() == wd.getJbtnView()) {
+			
 			// jbView버튼 클릭시
 			JOptionPane.showMessageDialog(null, "jbView버튼 클릭 확인");
+			if(!isFileLoaded) {
+				JOptionPane.showMessageDialog(null, "파일을 선택해주세요");
+				return;
+			}
 
 			// 로그분석 메서드 실행
 			try {
@@ -82,14 +89,21 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
 			viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
 		}
+		
+		
+		
 		if (ae.getSource() == wd.getJbtnSelect()) {
 			// jbSelect버튼 클릭시
 			JOptionPane.showMessageDialog(null, "jbSelect버튼 클릭 확인");
 			try {
 				openFile();
+				isFileLoaded = true; // 파일 선택했는지?
+//				System.out.println(isFileLoaded); //파일 선택여부 test
 			} catch (IOException e) {
 				e.printStackTrace();
+//				JOptionPane.showMessageDialog(null, "파일을 선택해주세요");
 			}
+			
 		}
 	}
 	

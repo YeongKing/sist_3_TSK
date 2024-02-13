@@ -49,6 +49,7 @@ public class ViewDesign extends JDialog {
 		ViewEvent ve = new ViewEvent(this);
 		jbReport.addActionListener(ve);
 		jbOk.addActionListener(ve);
+		
 
 	}
 
