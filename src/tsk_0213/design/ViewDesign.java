@@ -17,14 +17,21 @@ public class ViewDesign extends JDialog {
 
 	private JButton jbReport, jbOk;
 
+
+
 	private JTextArea jtaResult;
 	private JScrollPane jsp ;
+	
+	private String userId;
+	private boolean chmodRWX;
 	
 
 
 	public ViewDesign(String result,WorkDesign wd, boolean modal) {
 		super(wd, modal);
 		this.wd = wd;
+		this.userId = wd.getUserId();
+		this.chmodRWX= wd.isChmodRWX();
 
 		setLayout(null);
 
@@ -67,6 +74,18 @@ public class ViewDesign extends JDialog {
 
 	public JTextArea getJtaResult() {
 		return jtaResult;
+	}
+
+	public JScrollPane getJsp() {
+		return jsp;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public boolean isChmodRWX() {
+		return chmodRWX;
 	}
 
 

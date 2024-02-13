@@ -14,6 +14,7 @@ import javax.swing.border.TitledBorder;
 public class WorkDesign extends JFrame {
 
 	private String userId; // 로그인된 아이디
+	private boolean chmodRWX;
 
 	private JLabel jlStart, jlEnd, jlAll;	// jlAll(총 라인 수) 추가
 	private JTextField jtfStart, jtfEnd;
@@ -24,14 +25,19 @@ public class WorkDesign extends JFrame {
 	private JLabel  jlLine, jlLineNumber;
 	
 
+	public boolean isChmodRWX() {
+		return chmodRWX;
+	}
+
 	private JButton jbView, jbSelect;
 	private String fileName = null;
 
 
-	public WorkDesign(String userId) {
+	public WorkDesign(String userId,Boolean chmodRWX) {
 		super("sist 사용자 로그 분석 프로그램");
 		
 		this.userId = userId; //ViewEvent에서 report권한 확인시 필요하여 추가
+		this.chmodRWX = chmodRWX;
 		
 
 		jlStart = new JLabel("시작 라인 : ");
