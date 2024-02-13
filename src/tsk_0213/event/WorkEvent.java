@@ -79,8 +79,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			}
 			// 결과 출력
 			
-			String result = "가장 많이 사용된 키: " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수: " + browserCounts+"\n성공적으로 수행한 횟수(200): " 
-			+ successCount+"\n실패한 횟수(404): " + failureCount + "\n비정상적인 요청(403) 횟수: " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수: " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
+			String result = "가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수 : " + browserCounts+"\n성공적으로 수행한 횟수(200) : " 
+			+ successCount+"\n실패한 횟수(404) : " + failureCount + "\n비정상적인 요청(403) 횟수 : " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수 : " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
 
 			// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
 
@@ -116,7 +116,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	        return; // 예외 상황 처리 후 메서드를 종료합니다.
 	    }
 
-	    // 입력된문자열이 숫자로만 이루어져 있을 경우
+	    // 입력된문자열이 숫자로만 이루어져 있을 경우(구현되었음) &&  (입력된 숫자가 시작라인 끝라인 사이의 수 이면서 끝라인의 수가 시작라인의 수보다 커야함)> 미구현되었음
 	    if (!numbercheck.matches("\\d+")) {
 	        // 숫자로만 구성되어 있지 않으면 예외처리
 	        System.out.println("입력된 문자열은 숫자로만 구성되어야 합니다.");
@@ -235,12 +235,19 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			// 키값의 시작과 끝 인덱스
 
 			numberCheck(wd.getJtfStart().getText());
-			int keyIndex = number;
+			int startLineNumber = number;
+			
 			numberCheck(wd.getJtfEnd().getText());
-			int endIndex = number;
-
+			int endLineNumber = number;
+			
+			
+			int endIndex = 0;
+			int keyIndex = 0;
 			String line = "";
+			int checkLine =1 ;
 			while ((line = br.readLine()) != null) {
+				
+				if(checkLine>=startLineNumber&&checkLine<=endLineNumber) {
 				// isbook 초기화;
 				isBook = false;
 
@@ -302,6 +309,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 					abnormalRequestCount++;
 				}
 
+			}
+				checkLine++;
 			}
 		}
 		// 가장 많이 사용된 키와 횟수 찾기
