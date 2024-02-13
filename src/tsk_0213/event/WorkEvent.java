@@ -168,13 +168,15 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br;
+		
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(openFileString)));
 
 			String str = "";
+			int checkLineNumber = 1;
 			while ((str = br.readLine()) != null) {
 
-				wd.getJta().append(str + "\n");
+				wd.getJta().append(checkLineNumber++ +"////" + str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
 			}
@@ -191,7 +193,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 		wd.setTitle(openFileString);
 
-		wd.getJlAll().setText(Integer.toString(lineCount));
+		wd.getJlAll().setText("불러온 라인 수 :" + Integer.toString(lineCount));
 
 		wd.getJtfStart().setText(Integer.toString(startCount));
 		wd.getJtfEnd().setText(Integer.toString(lineCount));
