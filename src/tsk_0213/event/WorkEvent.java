@@ -72,22 +72,20 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			// 로그분석 메서드 실행
 			try {
 				viewLog(openFileString);
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			// 결과 출력
-			
-			String result = "가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수 : " + browserCounts+"\n성공적으로 수행한 횟수(200) : " 
-			+ successCount+"\n실패한 횟수(404) : " + failureCount + "\n비정상적인 요청(403) 횟수 : " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수 : " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
-
-			// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
-
-			
-
-			ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
-			viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+				// 결과 출력
+				
+				String result = "가장 많이 사용된 키 : " + maxRequestKey + " (횟수: " + maxRequestKeyCount + ")\n"+"브라우저별 접속 횟수 : " + browserCounts+"\n성공적으로 수행한 횟수(200) : " 
+						+ successCount+"\n실패한 횟수(404) : " + failureCount + "\n비정상적인 요청(403) 횟수 : " + abnormalRequestCount+"\nbooks 요청에 대한 에러(500) 횟수 : " + booksErrorCount+"\n가장 많은 요청 시간 : " + maxRequestHour + "횟수 : " + maxRequestHourCount;
+				
+				// System.out.println("가장 많은 요청이 발생한 시간: " + findMostFrequentTime(filePath));
+				
+				
+				
+				ViewDesign viewDesign = new ViewDesign(result ,wd, true); // ViewDesign 클래스의 객체 생성
+				viewDesign.setVisible(true); // 다이얼로그를 화면에 표시
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "에러");
+			} 
 		}
 		
 		
@@ -176,7 +174,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			int checkLineNumber = 1;
 			while ((str = br.readLine()) != null) {
 
-				wd.getJta().append(checkLineNumber++ +"////" + str + "\n");
+				wd.getJta().append(checkLineNumber++ +". " + str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
 			}
