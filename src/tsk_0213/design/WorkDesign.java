@@ -46,6 +46,9 @@ public class WorkDesign extends JFrame {
 
 		jtfStart = new JTextField();
 		jtfEnd = new JTextField();
+		// 파일 선택 전 수정 불가 설정
+		jtfStart.setEditable(false);
+		jtfEnd.setEditable(false);
 
 		jta = new JTextArea();
 		// added jta setEditable false

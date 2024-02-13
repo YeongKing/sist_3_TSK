@@ -28,14 +28,14 @@ public class ViewDesign extends JDialog {
 
 
 	public ViewDesign(String result,WorkDesign wd, boolean modal) {
-		super(wd, modal);
+		super(wd, "필요한 정보", modal);
 		this.wd = wd;
 		this.userId = wd.getUserId();
 		this.chmodRWX= wd.isChmodRWX();
 
 		setLayout(null);
 
-		setBounds(100, 100, 700, 700);
+		setBounds(100, 100, 770, 220);
 
 		jtaResult = new JTextArea(result);
 		jtaResult.setBorder(new TitledBorder("결과물"));
@@ -45,9 +45,9 @@ public class ViewDesign extends JDialog {
 		jbReport = new JButton("Report");
 		jbOk = new JButton("Ok");
 
-		jbReport.setBounds(500, 50, 150, 50);
-		jbOk.setBounds(500, 120, 150, 50);
-		jsp.setBounds(20, 20, 450, 600);
+		jbReport.setBounds(600, 40, 150, 50);
+		jbOk.setBounds(600, 110, 150, 50);
+		jsp.setBounds(20, 20, 550, 150);
 
 		add(jbReport);
 		add(jbOk);
