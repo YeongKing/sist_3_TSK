@@ -46,9 +46,20 @@ public class LoginEvent extends WindowAdapter implements ActionListener {
 	private void login() {
 		String userId = ld.getJtfId().getText().trim();	// 공백 제거
 		String userPw = String.valueOf(ld.getJpfPw().getPassword()).trim();
+		boolean chmodRWX =false;
 		if(userCheck()) {
 			JOptionPane.showMessageDialog(ld, userId + "님이 로그인하셨습니다.");	// null -> ld
-			new WorkDesign(userId);
+			
+			
+			for (int i = 0; i < members.length; i++) {
+				if (members[i].getId().equals(userId)) {
+					chmodRWX = members[i].isChmodRWX();
+					System.out.println(userId);
+					System.out.println(chmodRWX);
+				}
+			}
+			
+			new WorkDesign(userId,chmodRWX);
 			
 			//로그인되었다면 로그인창은 사라지게 구현해야함.
 			ldClose();

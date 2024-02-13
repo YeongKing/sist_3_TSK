@@ -49,9 +49,12 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 
 		// System.out.println("리포트버튼 클릭");
 		System.out.println(vd.getWd().getUserId());
-		if(vd.getWd().getUserId().equals("root")) {
+		System.out.println(vd.getUserId());
+		System.out.println(vd.isChmodRWX());
+		
+		if(!vd.isChmodRWX()) {
 			/*"root계정일경우 리포트 버튼 동작 X"*/
-			JOptionPane.showMessageDialog(null, "root계정은 Report버튼을 실행할 수 없습니다.");
+			JOptionPane.showMessageDialog(null, vd.getUserId()+"계정은 Report버튼을 실행할 수 없습니다.");
 			return;
 			
 			
