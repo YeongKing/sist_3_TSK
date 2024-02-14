@@ -83,6 +83,7 @@ public class WorkDesign extends JFrame {
 		add(jsp);
 		add(jbtnView);
 		add(jbtnSelect);
+		setResizable(false);
 
 		WorkEvent we = new WorkEvent(this);
 

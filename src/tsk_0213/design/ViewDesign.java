@@ -53,6 +53,9 @@ public class ViewDesign extends JDialog {
 		add(jbOk);
 		add(jsp);
 
+		setResizable(false);
+		
+		
 		ViewEvent ve = new ViewEvent(this);
 		jbReport.addActionListener(ve);
 		jbOk.addActionListener(ve);
