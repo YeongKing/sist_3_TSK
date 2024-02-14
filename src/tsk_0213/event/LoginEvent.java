@@ -18,6 +18,7 @@ public class LoginEvent extends WindowAdapter implements ActionListener {
 
 	public LoginEvent(LoginDesign ld) {
 		init();
+		
 		this.ld = ld;
 	}	// LoginEvent
 
@@ -98,8 +99,9 @@ public class LoginEvent extends WindowAdapter implements ActionListener {
 				// Admin -> admin 변경, administrator pw 1234 -> 12345 변경 
 				new MemberVO("admin", "1234", true),
 				new MemberVO("administrator", "12345", true),
-				new MemberVO("root", "1111", false)
-		};
+				new MemberVO("root", "1111")
+				};
+		
 	}	// init
 	
 }	// class

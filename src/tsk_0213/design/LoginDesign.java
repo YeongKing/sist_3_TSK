@@ -55,6 +55,7 @@ public class LoginDesign extends JFrame {
 		jtfId.addActionListener(le);
 		jpfPw.addActionListener(le);
 		jbtnLogin.addActionListener(le);
+		setResizable(false);
 		
 		setLocationRelativeTo(null);
 
