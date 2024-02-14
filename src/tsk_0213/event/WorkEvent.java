@@ -196,7 +196,6 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			int checkLineNumber = 1;
 			while ((str = br.readLine()) != null) {
 
-
 				wd.getJta().append(checkLineNumber++ +". " + str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
