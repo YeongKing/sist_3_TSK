@@ -183,9 +183,10 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(openFileString)));
 
 			String str = "";
+			int checkLineNumber = 1;
 			while ((str = br.readLine()) != null) {
 
-				wd.getJta().append(str + "\n");
+				wd.getJta().append(checkLineNumber++ +". " + str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
 			}
