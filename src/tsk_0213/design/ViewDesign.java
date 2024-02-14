@@ -1,14 +1,12 @@
 package tsk_0213.design;
 
-import tsk_0213.event.ViewEvent;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+
+import tsk_0213.event.ViewEvent;
 
 @SuppressWarnings("serial")
 public class ViewDesign extends JDialog {
@@ -35,7 +33,7 @@ public class ViewDesign extends JDialog {
 
 		setLayout(null);
 
-		setBounds(100, 100, 770, 220);
+		setBounds(100, 100, 750, 270);
 
 		jtaResult = new JTextArea(result);
 		jtaResult.setBorder(new TitledBorder("결과물"));
@@ -45,14 +43,17 @@ public class ViewDesign extends JDialog {
 		jbReport = new JButton("Report");
 		jbOk = new JButton("Ok");
 
-		jbReport.setBounds(600, 40, 150, 50);
-		jbOk.setBounds(600, 110, 150, 50);
-		jsp.setBounds(20, 20, 550, 150);
+		jbReport.setBounds(570, 40, 150, 50);
+		jbOk.setBounds(570, 110, 150, 50);
+		jsp.setBounds(20, 20, 540, 180);
 
 		add(jbReport);
 		add(jbOk);
 		add(jsp);
 
+		setResizable(false);
+		
+		
 		ViewEvent ve = new ViewEvent(this);
 		jbReport.addActionListener(ve);
 		jbOk.addActionListener(ve);

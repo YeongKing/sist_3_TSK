@@ -33,12 +33,12 @@ public class LoginDesign extends JFrame {
 		setLayout(null);//수동배치
 		setBounds(300, 100, 310, 190);
 
-		jlStatus.setBounds(70, 17, 200, 30);
-		jlId.setBounds(30, 60, 50, 30);
-		jlPw.setBounds(30, 100, 50, 30);
-		jtfId.setBounds(70, 60, 120, 30);
-		jpfPw.setBounds(70, 100, 120, 30);
-		jbtnLogin.setBounds(200, 60, 90, 70);
+		jlStatus.setBounds(60, 17, 200, 30);
+		jlId.setBounds(20, 60, 50, 30);
+		jlPw.setBounds(20, 100, 50, 30);
+		jtfId.setBounds(50, 60, 120, 30);
+		jpfPw.setBounds(50, 100, 120, 30);
+		jbtnLogin.setBounds(190, 60, 90, 70);
 		
 		jlStatus.setForeground(Color.red);
 
@@ -55,6 +55,7 @@ public class LoginDesign extends JFrame {
 		jtfId.addActionListener(le);
 		jpfPw.addActionListener(le);
 		jbtnLogin.addActionListener(le);
+		setResizable(false);
 		
 		setLocationRelativeTo(null);
 
