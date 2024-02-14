@@ -93,6 +93,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 					String result = "1. 가장 많이 사용된 키 : " + maxRequestKey + " (횟수 : " + maxRequestKeyCount + " 회)\n"
 					+ "2. 브라우저별 접속 횟수 : " + browserCounts+"\n"
 					+ "3. 성공적으로 수행한 횟수(200) : " + successCount+" 회\n"
+
+
 					+ "4. 가장 많은 요청 시간 : " + maxRequestHour + " 시\n" /*"횟수 : " + maxRequestHourCount*/ 
 					+ "5. 비정상적인 요청(403) 횟수 : " + abnormalRequestCount + " 회\n"
 					+ "5-1. 실패한 횟수(404) : " + failureCount + " 회\n"
