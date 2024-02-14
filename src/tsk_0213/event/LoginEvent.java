@@ -55,8 +55,8 @@ public class LoginEvent extends WindowAdapter implements ActionListener {
 			for (int i = 0; i < members.length; i++) {
 				if (members[i].getId().equals(userId)) {
 					chmodRWX = members[i].isChmodRWX();
-					System.out.println(userId);
-					System.out.println(chmodRWX);
+//					System.out.println(userId);
+//					System.out.println(chmodRWX);
 				}
 			}
 			

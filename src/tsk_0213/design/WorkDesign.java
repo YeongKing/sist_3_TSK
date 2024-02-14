@@ -64,9 +64,9 @@ public class WorkDesign extends JFrame {
 		setLayout(null);
 		setBounds(400, 100, 700, 700);
 
-		jlStart.setBounds(50, 30, 110, 30);
-		jlEnd.setBounds(270, 30, 110, 30);
-		jlAll.setBounds(480, 30, 200, 30);
+		jlStart.setBounds(40, 30, 110, 30);
+		jlEnd.setBounds(260, 30, 110, 30);
+		jlAll.setBounds(500, 30, 200, 30);
 
 		jtfStart.setBounds(120, 30, 120, 30);
 		jtfEnd.setBounds(350, 30, 120, 30);

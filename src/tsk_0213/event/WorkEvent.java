@@ -59,7 +59,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		JOptionPane.showMessageDialog(null, "윈도우 종료버튼 클릭 확인");
+		//JOptionPane.showMessageDialog(null, "윈도우 종료버튼 클릭 확인");
 		wd.dispose();
 	}
 
@@ -68,7 +68,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		if (ae.getSource() == wd.getJbtnView()) {
 			
 			// jbView버튼 클릭시
-			JOptionPane.showMessageDialog(null, "jbView버튼 클릭 확인");
+		//	JOptionPane.showMessageDialog(null, "jbView버튼 클릭 확인");
 			if(!isFileLoaded) {
 				JOptionPane.showMessageDialog(null, "파일을 선택해주세요");
 				return;
@@ -86,14 +86,15 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 //				numberCheck(start);
 //				numberCheck(end);
 
-				if((start <= end) && (end <= all) && (all!=0)) {
+				if((start>0)&&(start <= end) && (end <= all) && (all!=0)) {
 				
 					viewLog(openFileString);
 					
 					String result = "1. 가장 많이 사용된 키 : " + maxRequestKey + " (횟수 : " + maxRequestKeyCount + " 회)\n"
 					+ "2. 브라우저별 접속 횟수 : " + browserCounts+"\n"
 					+ "3. 성공적으로 수행한 횟수(200) : " + successCount+" 회\n"
-					+ "3-1. 실패한 횟수(404) : " + failureCount + " 회\n"
+
+
 					+ "4. 가장 많은 요청 시간 : " + maxRequestHour + " 시\n" /*"횟수 : " + maxRequestHourCount*/ 
 					+ "5. 비정상적인 요청(403) 횟수 : " + abnormalRequestCount + " 회\n"
 					+ "5-1. 실패한 횟수(404) : " + failureCount + " 회\n"
@@ -120,14 +121,14 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		
 		if (ae.getSource() == wd.getJbtnSelect()) {
 			// jbSelect버튼 클릭시
-			JOptionPane.showMessageDialog(null, "jbSelect버튼 클릭 확인");
+			//JOptionPane.showMessageDialog(null, "jbSelect버튼 클릭 확인");
 			try {
 				openFile();
 				isFileLoaded = true; // 파일 선택했는지?
 //				System.out.println(isFileLoaded); //파일 선택여부 test
-			} catch (IOException e) {
-				e.printStackTrace();
-//				JOptionPane.showMessageDialog(null, "파일을 선택해주세요");
+			} catch (Exception e) {
+			//	e.printStackTrace();
+			//	JOptionPane.showMessageDialog(null, "파일을 선택해주세요");
 			}
 			
 		}
@@ -136,7 +137,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	
 	public void numberCheck(String numbercheck) {
 
-		System.out.println(numbercheck);
+//		System.out.println(numbercheck);
 	    // 입력된문자열이 빈문자열이거나 null일경우
 	    if (numbercheck == null || numbercheck.isEmpty()) {
 	        // 처리할 내용이 있다면 이곳에 추가합니다.
@@ -156,7 +157,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	         number = Integer.parseInt(numbercheck);
 	         
 	    } catch (NumberFormatException e) {
-	        System.out.println("올바른 숫자 형식이 아닙니다.");
+//	        System.out.println("올바른 숫자 형식이 아닙니다.");
 	        e.printStackTrace(); // 디버깅을 위해 예외 내용을 출력합니다.
 	    }
 
@@ -164,7 +165,7 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 	}
 	
 
-	private void openFile() throws IOException {
+	private void openFile() throws Exception {
 		lineCount = 0;
 		startCount = 0;
 
@@ -177,7 +178,8 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 		openFileString = path + fileName;
 
 		if (path == null) {
-			return;
+			throw new Exception();
+		
 		} // end if
 
 		File file = new File(openFileString);
@@ -193,10 +195,11 @@ public class WorkEvent extends WindowAdapter implements ActionListener {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(openFileString)));
 
 			String str = "";
-			int checkLineNumber = 1;
+
 			while ((str = br.readLine()) != null) {
 
-				wd.getJta().append(checkLineNumber++ +". " + str + "\n");
+
+				wd.getJta().append(str + "\n");
 				sb.append(str + "\n");
 				lineCount++;
 			}
