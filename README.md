@@ -10,7 +10,7 @@
 
 ## 기여 및 문의
 
-프로젝트에 대한 버그 리포트, 기능 제안 또는 코드 리뷰는 [이곳](https://github.com/aoi562227/sist_3_TSK/issues)의 GitHub Issues에 남겨주시면 감사하겠습니다.
+프로젝트에 대한 버그 리포트, 기능 제안 또는 코드 리뷰는 [이곳](https://github.com/aoi562227/sist_3_TSK/issues)에 남겨주시면 감사하겠습니다.
 
 ## 배포 가능성
 
