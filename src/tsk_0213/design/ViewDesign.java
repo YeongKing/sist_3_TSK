@@ -1,12 +1,14 @@
 package tsk_0213.design;
 
+import tsk_0213.event.ViewEvent;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
-
-import tsk_0213.event.ViewEvent;
 
 @SuppressWarnings("serial")
 public class ViewDesign extends JDialog {
@@ -25,7 +27,7 @@ public class ViewDesign extends JDialog {
 	
 
 
-	public ViewDesign(String result,WorkDesign wd, boolean modal) {
+	public ViewDesign(String result, WorkDesign wd, boolean modal) {
 		super(wd, "필요한 정보", modal);
 		this.wd = wd;
 		this.userId = wd.getUserId();
@@ -33,7 +35,7 @@ public class ViewDesign extends JDialog {
 
 		setLayout(null);
 
-		setBounds(100, 100, 750, 270);
+		setBounds(100, 100, 750, 420);
 
 		jtaResult = new JTextArea(result);
 		jtaResult.setBorder(new TitledBorder("결과물"));
@@ -43,9 +45,9 @@ public class ViewDesign extends JDialog {
 		jbReport = new JButton("Report");
 		jbOk = new JButton("Ok");
 
-		jbReport.setBounds(570, 40, 150, 50);
-		jbOk.setBounds(570, 110, 150, 50);
-		jsp.setBounds(20, 20, 540, 180);
+		jbReport.setBounds(570, 130, 150, 50);
+		jbOk.setBounds(570, 190, 150, 50);
+		jsp.setBounds(20, 20, 540, 340);
 
 		add(jbReport);
 		add(jbOk);
@@ -53,7 +55,7 @@ public class ViewDesign extends JDialog {
 
 		setResizable(false);
 		
-		
+
 		ViewEvent ve = new ViewEvent(this);
 		jbReport.addActionListener(ve);
 		jbOk.addActionListener(ve);
