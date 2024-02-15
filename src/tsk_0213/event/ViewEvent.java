@@ -16,15 +16,7 @@ import javax.swing.JOptionPane;
 
 public class ViewEvent extends WindowAdapter implements ActionListener{
 
-<<<<<<< HEAD
 	private ViewDesign vd ;
-	
-
-
-	
-=======
-	private ViewDesign vd;
->>>>>>> cadbb98e92050d1e4c0f53ca2a35d2d69a5cfb12
 	
 	public ViewEvent(ViewDesign vd) {
 		this.vd =vd;
@@ -43,11 +35,6 @@ public class ViewEvent extends WindowAdapter implements ActionListener{
 
 			}
 			
-<<<<<<< HEAD
-			
-=======
-
->>>>>>> cadbb98e92050d1e4c0f53ca2a35d2d69a5cfb12
 			
 		}	// end if
 		
