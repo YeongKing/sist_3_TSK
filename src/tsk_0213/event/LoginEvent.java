@@ -15,8 +15,11 @@ public class LoginEvent extends WindowAdapter implements ActionListener {
 
 	private LoginDesign ld;
 	private MemberVO[] members; // Array of MemberVO objects to hold user information
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> cadbb98e92050d1e4c0f53ca2a35d2d69a5cfb12
 
 	public LoginEvent(LoginDesign ld) {
 		init();
